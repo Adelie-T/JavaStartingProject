@@ -22,17 +22,18 @@ public class MonApplication implements CommandLineRunner {
 	}
 
 	
-	@Autowired
+	// @Autowired
 	// on câble automatiquement entre ici et l
-	private IClientRepository clientRepo;
+	// private IClientRepository clientRepo;
 	
 	
 	
-	@Autowired
-	private ICommandeRepository commandeRepo;
+	/*
+	 * @Autowired private ICommandeRepository commandeRepo;
+	 */
 	
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) throws Exception {}
 //		// TODO Auto-generated method stub
 //		
 //		
@@ -64,11 +65,10 @@ public class MonApplication implements CommandLineRunner {
 //		
 //		
 //		//clientRepo.deleteById(5L);
-	}
 
 		
 
 	
 	
 
-}
+	}

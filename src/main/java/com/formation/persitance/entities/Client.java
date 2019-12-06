@@ -4,12 +4,9 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Table (name = "clients")  //on précise que c'est une table et qu'elle s'appelle "clients" et non 'Client'
@@ -100,21 +97,34 @@ public class Client {
 				+ email + ", telephone=" + telephone + "]";
 	}
 	
+
 	public Client() {
-		super();
+		id = null; 
+		nom = "";
+		prenom = "";
+		naissance = new java.util.Date();
+		email = "";
+		telephone = "";
 	}
 
-	public Client(String nom, String prenom, Date naissance, String email, String telephone) {
-		super();
-		this.id = null; 
-		this.nom = nom;
-		this.prenom = prenom;
-		this.naissance = naissance;
-		this.email = email;
-		this.telephone = telephone;
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Client other = (Client) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
 	}
-	
-	
+
 	
 	
 

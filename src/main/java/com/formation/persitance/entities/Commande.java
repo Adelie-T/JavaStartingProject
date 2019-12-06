@@ -14,7 +14,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Table (name = "commandes")
 @Entity
@@ -41,6 +40,7 @@ public class Commande {
 	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name= "id_commande")
 	List<PanierCommandable> panierCommandables;
+	//on peut aussi créer une liste mais il s'attend que 
 
 	
 	public Long getId() {
